@@ -22,6 +22,7 @@ public class PatientDto {
     private UUID facilityId;
     private String facilityName;
     private String hivStatus;
+    private LocalDate hivTestDate;
     private LocalDate artStartDate;
     private LocalDate enrollmentDate;
     private Instant createdAt;
