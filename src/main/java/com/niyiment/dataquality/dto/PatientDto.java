@@ -16,6 +16,8 @@ public class PatientDto {
     private Gender gender;
     private String phone;
     private String address;
+    private String guardianName;
+    private String guardianPhone;
     private String nationalId;
     private UUID facilityId;
     private String facilityName;
