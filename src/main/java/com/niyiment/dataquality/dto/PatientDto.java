@@ -14,6 +14,7 @@ public class PatientDto {
     private String lastName;
     private LocalDate dateOfBirth;
     private Gender gender;
+    private String pregnancyStatus;
     private String phone;
     private String address;
     private String guardianName;
