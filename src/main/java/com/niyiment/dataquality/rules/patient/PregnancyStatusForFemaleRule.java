@@ -3,10 +3,12 @@ package com.niyiment.dataquality.rules.patient;
 import com.niyiment.dataquality.dto.PatientDto;
 import com.niyiment.dataquality.dto.ValidationResult;
 import com.niyiment.dataquality.rules.BusinessRule;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.Period;
 
+@Component
 public class PregnancyStatusForFemaleRule implements BusinessRule<PatientDto> {
     @Override
     public boolean isApplicable(PatientDto data) {

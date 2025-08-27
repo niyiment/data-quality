@@ -3,7 +3,9 @@ package com.niyiment.dataquality.rules.patient;
 import com.niyiment.dataquality.dto.PatientDto;
 import com.niyiment.dataquality.dto.ValidationResult;
 import com.niyiment.dataquality.rules.BusinessRule;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ArtStartDateRequiredForPositiveRule implements BusinessRule<PatientDto> {
 
     @Override
