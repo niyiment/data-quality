@@ -20,8 +20,43 @@ This project introduces **Business Rule Validation Framework** that eliminates t
 
 The framework is useful in:
 - **Electronic Medical Records (EMR):** Patient-level validations before saving records.
-- **Quarterly Reporting (DATIM):** Aggregare data validations and consistency checks before submission.
+- **Quarterly Reporting (DATIM):** Aggregate data validations and consistency checks before submission.
+- **Others**: It can be extended for use in other areas.
 
+** Example in Payment
+
+```java
+@Component
+public class AmountValidationRule implements BusinessRule<PaymentDto> {
+    @Override
+    public boolean isApplicable(PaymentDto data) {
+        return true;
+    }
+
+    @Override
+    public ValidationResult validate(PaymentDto data) {
+        if (data.getAmount() == null || data.getAmount().compareTo(BigDecimal.ZERO) <= 0) {
+            return ValidationResult.failure("INVALID_AMOUNT", "Amount must be greater than zero");
+        }
+        
+        if (data.getAmount().compareTo(new BigDecimal("100000000")) > 0) {
+            return ValidationResult.failure("AMOUNT_TOO_HIGH", "Amount exceeds maximum limit");
+        }
+        
+        return ValidationResult.success();
+    }
+    
+    @Override
+    public String getRuleName() {
+        return "Amount Validation Rule";
+    }
+    
+    @Override
+    public int getPriority() {
+        return 1;
+    }
+}
+```
 --- 
 ## Features
 - Plug-and-play business rules using Spring Boot DI.
