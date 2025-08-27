@@ -38,6 +38,6 @@ public class AgeDisaggregationRule implements BusinessRule<DatimReport> {
 
     @Override
     public int getPriority() {
-        return 4;
+        return 3;
     }
 }

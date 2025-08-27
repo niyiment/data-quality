@@ -40,6 +40,6 @@ public class HtsPositivityRateRule implements BusinessRule<DatimReport> {
 
     @Override
     public int getPriority() {
-        return 3;
+        return 5;
     }
 }
