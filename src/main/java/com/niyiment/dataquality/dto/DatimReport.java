@@ -11,7 +11,10 @@ public class DatimReport {
     private Integer previousTxCurr;
     private Integer txRtt;
     private Integer txMl;
-    private Integer txtDsd;
+    private Integer txDsd;
+    private Integer htsTst;
+    private Integer htsPos;
     private Integer artInitiations;
+    private Integer totalPatients;
     private Map<String, Integer> ageDisaggregation;
 }
